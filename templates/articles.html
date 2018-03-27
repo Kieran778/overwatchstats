@@ -1,0 +1,11 @@
+{% extends 'layout.html'%} <!-- This will inherit the basic layout html file -->
+
+{% block body %}
+    <h1>Articles</h1>
+    <ul class="list-group"><!-- Boostrap class to list items-->
+        <!-- This 'artciles' array is the parameter we passed to render_template for the artciles route-->
+        {% for article in articles %}
+            <li class="list-group-item"><a href="articles/{{article.id}}">{{article.title}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
